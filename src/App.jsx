@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { Navigate, Route, Routes } from "react-router-dom"
 import { Toaster } from "@/components/ui/sonner"
 import ProtectedRoute from "@/routes/ProtectedRoute"
@@ -13,8 +14,21 @@ import Payments from "@/pages/Payments"
 import Attendance from "@/pages/Attendance"
 import Settings from "@/pages/Settings"
 import NotFound from "@/pages/NotFound"
+import { applyTheme, getSavedTheme } from "@/utils/theme"
 
 function App() {
+  // Mavzu (dark mode) — sahifa yangilansa localStorage'dan tiklanadi
+  const [theme, setTheme] = useState(getSavedTheme())
+
+  // theme o'zgarganda <html> ga "dark" klassini qo'yamiz va saqlaymiz
+  useEffect(() => {
+    applyTheme(theme)
+  }, [theme])
+
+  function toggleTheme() {
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
+
   return (
     <>
       <Routes>
@@ -35,7 +49,7 @@ function App() {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <DashboardLayout />
+              <DashboardLayout theme={theme} onToggleTheme={toggleTheme} />
             </ProtectedRoute>
           }
         >
@@ -52,7 +66,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <Toaster richColors position="top-right" />
+      <Toaster theme={theme} richColors position="top-right" />
     </>
   )
 }

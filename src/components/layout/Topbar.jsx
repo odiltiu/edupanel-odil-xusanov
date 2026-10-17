@@ -1,12 +1,12 @@
 import { useState } from "react"
 import PropTypes from "prop-types"
 import { useNavigate } from "react-router-dom"
-import { LogOut, Menu } from "lucide-react"
+import { LogOut, Menu, Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ConfirmDialog from "@/components/common/ConfirmDialog"
 import { getSavedAdmin, removeAdmin } from "@/utils/storage"
 
-function Topbar({ title, onMenuClick }) {
+function Topbar({ title, onMenuClick, theme, onToggleTheme }) {
   const navigate = useNavigate()
   const admin = getSavedAdmin()
   const [logoutOpen, setLogoutOpen] = useState(false)
@@ -24,6 +24,10 @@ function Topbar({ title, onMenuClick }) {
       </Button>
 
       <h1 className="flex-1 truncate text-lg font-semibold">{title}</h1>
+
+      <Button variant="ghost" size="icon" onClick={onToggleTheme} aria-label="Mavzuni almashtirish">
+        {theme === "dark" ? <Sun className="size-5" /> : <Moon className="size-5" />}
+      </Button>
 
       <div className="flex items-center gap-2">
         <img src={admin?.avatar} alt={admin?.fullName} className="size-9 rounded-full object-cover" />
@@ -50,6 +54,8 @@ function Topbar({ title, onMenuClick }) {
 Topbar.propTypes = {
   title: PropTypes.string.isRequired,
   onMenuClick: PropTypes.func.isRequired,
+  theme: PropTypes.string.isRequired,
+  onToggleTheme: PropTypes.func.isRequired,
 }
 
 export default Topbar
