@@ -1,0 +1,836 @@
+{
+  "admins": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "fullName": "Aziz Rahimov",
+      "avatar": "https://i.pravatar.cc/150?img=12"
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "name": "FN-24",
+      "course": "Frontend",
+      "teacher": "Jasur Aliyev",
+      "days": "toq",
+      "time": "14:00",
+      "monthlyPrice": 800000,
+      "startDate": "2026-09-01",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "BK-12",
+      "course": "Backend (Python)",
+      "teacher": "Dilshod Ergashev",
+      "days": "juft",
+      "time": "16:00",
+      "monthlyPrice": 900000,
+      "startDate": "2026-08-17",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "name": "UX-07",
+      "course": "UI/UX dizayn",
+      "teacher": "Malika Saidova",
+      "days": "toq",
+      "time": "10:00",
+      "monthlyPrice": 700000,
+      "startDate": "2026-09-14",
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "name": "FN-23",
+      "course": "Frontend",
+      "teacher": "Jasur Aliyev",
+      "days": "juft",
+      "time": "18:00",
+      "monthlyPrice": 750000,
+      "startDate": "2026-03-02",
+      "status": "finished"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "firstName": "Ali",
+      "lastName": "Karimov",
+      "phone": "+998901234567",
+      "birthDate": "2006-04-12",
+      "groupId": 1,
+      "status": "active",
+      "joinedAt": "2026-09-01",
+      "note": ""
+    },
+    {
+      "id": 2,
+      "firstName": "Madina",
+      "lastName": "Yusupova",
+      "phone": "+998935551203",
+      "birthDate": "2005-11-03",
+      "groupId": 1,
+      "status": "active",
+      "joinedAt": "2026-09-01",
+      "note": "Ingliz tilini yaxshi biladi"
+    },
+    {
+      "id": 3,
+      "firstName": "Bekzod",
+      "lastName": "Tursunov",
+      "phone": "+998977104455",
+      "birthDate": "2003-02-27",
+      "groupId": 1,
+      "status": "active",
+      "joinedAt": "2026-09-01",
+      "note": ""
+    },
+    {
+      "id": 4,
+      "firstName": "Shahzoda",
+      "lastName": "Rahmonova",
+      "phone": "+998946207788",
+      "birthDate": "2007-07-19",
+      "groupId": 1,
+      "status": "active",
+      "joinedAt": "2026-09-03",
+      "note": "Ota-onasi bilan bog'lanish: +998901112233"
+    },
+    {
+      "id": 5,
+      "firstName": "Sardor",
+      "lastName": "Qodirov",
+      "phone": "+998998803311",
+      "birthDate": "2001-09-08",
+      "groupId": 1,
+      "status": "active",
+      "joinedAt": "2026-09-01",
+      "note": ""
+    },
+    {
+      "id": 6,
+      "firstName": "Nilufar",
+      "lastName": "Ismoilova",
+      "phone": "+998903346690",
+      "birthDate": "2004-05-30",
+      "groupId": 1,
+      "status": "frozen",
+      "joinedAt": "2026-09-01",
+      "note": "Oktyabrda sog'lig'i sababli muzlatildi"
+    },
+    {
+      "id": 7,
+      "firstName": "Jahongir",
+      "lastName": "Abdullayev",
+      "phone": "+998881452367",
+      "birthDate": "1998-12-14",
+      "groupId": 1,
+      "status": "active",
+      "joinedAt": "2026-09-08",
+      "note": ""
+    },
+    {
+      "id": 8,
+      "firstName": "Dilnoza",
+      "lastName": "Hamidova",
+      "phone": "+998916623047",
+      "birthDate": "2006-01-22",
+      "groupId": 1,
+      "status": "left",
+      "joinedAt": "2026-09-01",
+      "note": "Boshqa shaharga ko'chib ketdi"
+    },
+    {
+      "id": 9,
+      "firstName": "Otabek",
+      "lastName": "Nazarov",
+      "phone": "+998930017429",
+      "birthDate": "2000-03-15",
+      "groupId": 2,
+      "status": "active",
+      "joinedAt": "2026-08-17",
+      "note": ""
+    },
+    {
+      "id": 10,
+      "firstName": "Kamola",
+      "lastName": "Sobirova",
+      "phone": "+998974418826",
+      "birthDate": "2002-08-09",
+      "groupId": 2,
+      "status": "active",
+      "joinedAt": "2026-08-17",
+      "note": ""
+    },
+    {
+      "id": 11,
+      "firstName": "Javohir",
+      "lastName": "Mirzayev",
+      "phone": "+998909907315",
+      "birthDate": "1999-10-01",
+      "groupId": 2,
+      "status": "active",
+      "joinedAt": "2026-08-17",
+      "note": "Ishdan keyin keladi"
+    },
+    {
+      "id": 12,
+      "firstName": "Gulnoza",
+      "lastName": "Ergasheva",
+      "phone": "+998945276130",
+      "birthDate": "2003-06-25",
+      "groupId": 2,
+      "status": "active",
+      "joinedAt": "2026-08-20",
+      "note": ""
+    },
+    {
+      "id": 13,
+      "firstName": "Sherzod",
+      "lastName": "Xolmatov",
+      "phone": "+998993362584",
+      "birthDate": "1996-04-04",
+      "groupId": 2,
+      "status": "active",
+      "joinedAt": "2026-08-17",
+      "note": ""
+    },
+    {
+      "id": 14,
+      "firstName": "Zarina",
+      "lastName": "Usmonova",
+      "phone": "+998337051948",
+      "birthDate": "2005-12-17",
+      "groupId": 2,
+      "status": "frozen",
+      "joinedAt": "2026-08-17",
+      "note": "Imtihonlar sababli muzlatildi"
+    },
+    {
+      "id": 15,
+      "firstName": "Doston",
+      "lastName": "Raximov",
+      "phone": "+998951180462",
+      "birthDate": "2004-02-11",
+      "groupId": 2,
+      "status": "active",
+      "joinedAt": "2026-09-01",
+      "note": ""
+    },
+    {
+      "id": 16,
+      "firstName": "Sevara",
+      "lastName": "Aminova",
+      "phone": "+998906634172",
+      "birthDate": "2007-03-28",
+      "groupId": 3,
+      "status": "active",
+      "joinedAt": "2026-09-14",
+      "note": ""
+    },
+    {
+      "id": 17,
+      "firstName": "Bobur",
+      "lastName": "Saidov",
+      "phone": "+998935209847",
+      "birthDate": "2002-11-30",
+      "groupId": 3,
+      "status": "active",
+      "joinedAt": "2026-09-14",
+      "note": ""
+    },
+    {
+      "id": 18,
+      "firstName": "Malika",
+      "lastName": "Tojiboyeva",
+      "phone": "+998977745061",
+      "birthDate": "2006-09-05",
+      "groupId": 3,
+      "status": "active",
+      "joinedAt": "2026-09-14",
+      "note": "Grafik planshet olib keladi"
+    },
+    {
+      "id": 19,
+      "firstName": "Azizbek",
+      "lastName": "Jo'rayev",
+      "phone": "+998948832519",
+      "birthDate": "2001-07-13",
+      "groupId": 3,
+      "status": "active",
+      "joinedAt": "2026-09-16",
+      "note": ""
+    },
+    {
+      "id": 20,
+      "firstName": "Feruza",
+      "lastName": "Qosimova",
+      "phone": "+998991067384",
+      "birthDate": "2005-04-21",
+      "groupId": 3,
+      "status": "active",
+      "joinedAt": "2026-09-14",
+      "note": ""
+    },
+    {
+      "id": 21,
+      "firstName": "Islom",
+      "lastName": "Sultonov",
+      "phone": "+998882290756",
+      "birthDate": "2003-01-09",
+      "groupId": 3,
+      "status": "left",
+      "joinedAt": "2026-09-14",
+      "note": "Kurs unga to'g'ri kelmadi"
+    },
+    {
+      "id": 22,
+      "firstName": "Nodira",
+      "lastName": "Fayzullayeva",
+      "phone": "+998901458263",
+      "birthDate": "2004-10-16",
+      "groupId": 4,
+      "status": "left",
+      "joinedAt": "2026-03-02",
+      "note": "Kursni tugatdi"
+    },
+    {
+      "id": 23,
+      "firstName": "Umid",
+      "lastName": "Normatov",
+      "phone": "+998936721094",
+      "birthDate": "2002-05-02",
+      "groupId": 4,
+      "status": "left",
+      "joinedAt": "2026-03-02",
+      "note": "Kursni tugatdi"
+    },
+    {
+      "id": 24,
+      "firstName": "Laylo",
+      "lastName": "Shukurova",
+      "phone": "+998975583617",
+      "birthDate": "2005-08-27",
+      "groupId": 4,
+      "status": "left",
+      "joinedAt": "2026-03-02",
+      "note": "Kursni tugatdi"
+    },
+    {
+      "id": 25,
+      "firstName": "Ulug'bek",
+      "lastName": "Karimov",
+      "phone": "+998943390825",
+      "birthDate": "1999-06-18",
+      "groupId": 4,
+      "status": "left",
+      "joinedAt": "2026-03-04",
+      "note": "Kursni tugatdi"
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "amount": 800000,
+      "month": "2026-09",
+      "method": "karta",
+      "paidAt": "2026-09-02"
+    },
+    {
+      "id": 2,
+      "studentId": 2,
+      "amount": 800000,
+      "month": "2026-09",
+      "method": "click",
+      "paidAt": "2026-09-03"
+    },
+    {
+      "id": 3,
+      "studentId": 3,
+      "amount": 800000,
+      "month": "2026-09",
+      "method": "naqd",
+      "paidAt": "2026-09-01"
+    },
+    {
+      "id": 4,
+      "studentId": 4,
+      "amount": 800000,
+      "month": "2026-09",
+      "method": "karta",
+      "paidAt": "2026-09-05"
+    },
+    {
+      "id": 5,
+      "studentId": 5,
+      "amount": 800000,
+      "month": "2026-09",
+      "method": "click",
+      "paidAt": "2026-09-04"
+    },
+    {
+      "id": 6,
+      "studentId": 6,
+      "amount": 800000,
+      "month": "2026-09",
+      "method": "naqd",
+      "paidAt": "2026-09-02"
+    },
+    {
+      "id": 7,
+      "studentId": 7,
+      "amount": 800000,
+      "month": "2026-09",
+      "method": "karta",
+      "paidAt": "2026-09-09"
+    },
+    {
+      "id": 8,
+      "studentId": 8,
+      "amount": 800000,
+      "month": "2026-09",
+      "method": "naqd",
+      "paidAt": "2026-09-03"
+    },
+    {
+      "id": 9,
+      "studentId": 1,
+      "amount": 800000,
+      "month": "2026-10",
+      "method": "karta",
+      "paidAt": "2026-10-03"
+    },
+    {
+      "id": 10,
+      "studentId": 2,
+      "amount": 800000,
+      "month": "2026-10",
+      "method": "click",
+      "paidAt": "2026-10-02"
+    },
+    {
+      "id": 11,
+      "studentId": 3,
+      "amount": 400000,
+      "month": "2026-10",
+      "method": "naqd",
+      "paidAt": "2026-10-06"
+    },
+    {
+      "id": 12,
+      "studentId": 7,
+      "amount": 800000,
+      "month": "2026-10",
+      "method": "karta",
+      "paidAt": "2026-10-08"
+    },
+    {
+      "id": 13,
+      "studentId": 9,
+      "amount": 900000,
+      "month": "2026-08",
+      "method": "karta",
+      "paidAt": "2026-08-17"
+    },
+    {
+      "id": 14,
+      "studentId": 10,
+      "amount": 900000,
+      "month": "2026-08",
+      "method": "naqd",
+      "paidAt": "2026-08-18"
+    },
+    {
+      "id": 15,
+      "studentId": 11,
+      "amount": 900000,
+      "month": "2026-08",
+      "method": "click",
+      "paidAt": "2026-08-17"
+    },
+    {
+      "id": 16,
+      "studentId": 13,
+      "amount": 900000,
+      "month": "2026-08",
+      "method": "karta",
+      "paidAt": "2026-08-19"
+    },
+    {
+      "id": 17,
+      "studentId": 9,
+      "amount": 900000,
+      "month": "2026-09",
+      "method": "karta",
+      "paidAt": "2026-09-15"
+    },
+    {
+      "id": 18,
+      "studentId": 10,
+      "amount": 900000,
+      "month": "2026-09",
+      "method": "naqd",
+      "paidAt": "2026-09-16"
+    },
+    {
+      "id": 19,
+      "studentId": 11,
+      "amount": 900000,
+      "month": "2026-09",
+      "method": "click",
+      "paidAt": "2026-09-17"
+    },
+    {
+      "id": 20,
+      "studentId": 12,
+      "amount": 900000,
+      "month": "2026-09",
+      "method": "karta",
+      "paidAt": "2026-09-15"
+    },
+    {
+      "id": 21,
+      "studentId": 13,
+      "amount": 900000,
+      "month": "2026-09",
+      "method": "click",
+      "paidAt": "2026-09-18"
+    },
+    {
+      "id": 22,
+      "studentId": 14,
+      "amount": 900000,
+      "month": "2026-09",
+      "method": "naqd",
+      "paidAt": "2026-09-16"
+    },
+    {
+      "id": 23,
+      "studentId": 15,
+      "amount": 900000,
+      "month": "2026-09",
+      "method": "karta",
+      "paidAt": "2026-09-02"
+    },
+    {
+      "id": 24,
+      "studentId": 9,
+      "amount": 900000,
+      "month": "2026-10",
+      "method": "karta",
+      "paidAt": "2026-10-13"
+    },
+    {
+      "id": 25,
+      "studentId": 10,
+      "amount": 900000,
+      "month": "2026-10",
+      "method": "naqd",
+      "paidAt": "2026-10-14"
+    },
+    {
+      "id": 26,
+      "studentId": 11,
+      "amount": 450000,
+      "month": "2026-10",
+      "method": "click",
+      "paidAt": "2026-10-15"
+    },
+    {
+      "id": 27,
+      "studentId": 13,
+      "amount": 900000,
+      "month": "2026-10",
+      "method": "click",
+      "paidAt": "2026-10-16"
+    },
+    {
+      "id": 28,
+      "studentId": 16,
+      "amount": 700000,
+      "month": "2026-09",
+      "method": "click",
+      "paidAt": "2026-09-14"
+    },
+    {
+      "id": 29,
+      "studentId": 17,
+      "amount": 700000,
+      "month": "2026-09",
+      "method": "karta",
+      "paidAt": "2026-09-15"
+    },
+    {
+      "id": 30,
+      "studentId": 18,
+      "amount": 700000,
+      "month": "2026-09",
+      "method": "naqd",
+      "paidAt": "2026-09-14"
+    },
+    {
+      "id": 31,
+      "studentId": 19,
+      "amount": 700000,
+      "month": "2026-09",
+      "method": "click",
+      "paidAt": "2026-09-16"
+    },
+    {
+      "id": 32,
+      "studentId": 20,
+      "amount": 700000,
+      "month": "2026-09",
+      "method": "karta",
+      "paidAt": "2026-09-17"
+    },
+    {
+      "id": 33,
+      "studentId": 21,
+      "amount": 700000,
+      "month": "2026-09",
+      "method": "naqd",
+      "paidAt": "2026-09-14"
+    },
+    {
+      "id": 34,
+      "studentId": 16,
+      "amount": 700000,
+      "month": "2026-10",
+      "method": "click",
+      "paidAt": "2026-10-12"
+    },
+    {
+      "id": 35,
+      "studentId": 18,
+      "amount": 700000,
+      "month": "2026-10",
+      "method": "naqd",
+      "paidAt": "2026-10-14"
+    },
+    {
+      "id": 36,
+      "studentId": 20,
+      "amount": 700000,
+      "month": "2026-10",
+      "method": "karta",
+      "paidAt": "2026-10-15"
+    },
+    {
+      "id": 37,
+      "studentId": 22,
+      "amount": 750000,
+      "month": "2026-08",
+      "method": "karta",
+      "paidAt": "2026-08-03"
+    },
+    {
+      "id": 38,
+      "studentId": 23,
+      "amount": 750000,
+      "month": "2026-08",
+      "method": "naqd",
+      "paidAt": "2026-08-04"
+    },
+    {
+      "id": 39,
+      "studentId": 24,
+      "amount": 750000,
+      "month": "2026-08",
+      "method": "click",
+      "paidAt": "2026-08-03"
+    },
+    {
+      "id": 40,
+      "studentId": 25,
+      "amount": 750000,
+      "month": "2026-08",
+      "method": "naqd",
+      "paidAt": "2026-08-05"
+    }
+  ],
+  "attendance": [
+    {
+      "id": 1,
+      "groupId": 1,
+      "date": "2026-10-14",
+      "records": [
+        {
+          "studentId": 1,
+          "present": true
+        },
+        {
+          "studentId": 2,
+          "present": true
+        },
+        {
+          "studentId": 3,
+          "present": true
+        },
+        {
+          "studentId": 4,
+          "present": false
+        },
+        {
+          "studentId": 5,
+          "present": true
+        },
+        {
+          "studentId": 7,
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "groupId": 1,
+      "date": "2026-10-16",
+      "records": [
+        {
+          "studentId": 1,
+          "present": true
+        },
+        {
+          "studentId": 2,
+          "present": true
+        },
+        {
+          "studentId": 3,
+          "present": false
+        },
+        {
+          "studentId": 4,
+          "present": true
+        },
+        {
+          "studentId": 5,
+          "present": false
+        },
+        {
+          "studentId": 7,
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "groupId": 2,
+      "date": "2026-10-13",
+      "records": [
+        {
+          "studentId": 9,
+          "present": true
+        },
+        {
+          "studentId": 10,
+          "present": true
+        },
+        {
+          "studentId": 11,
+          "present": true
+        },
+        {
+          "studentId": 12,
+          "present": false
+        },
+        {
+          "studentId": 13,
+          "present": true
+        },
+        {
+          "studentId": 15,
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "groupId": 2,
+      "date": "2026-10-15",
+      "records": [
+        {
+          "studentId": 9,
+          "present": true
+        },
+        {
+          "studentId": 10,
+          "present": true
+        },
+        {
+          "studentId": 11,
+          "present": true
+        },
+        {
+          "studentId": 12,
+          "present": true
+        },
+        {
+          "studentId": 13,
+          "present": true
+        },
+        {
+          "studentId": 15,
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "groupId": 3,
+      "date": "2026-10-14",
+      "records": [
+        {
+          "studentId": 16,
+          "present": true
+        },
+        {
+          "studentId": 17,
+          "present": true
+        },
+        {
+          "studentId": 18,
+          "present": true
+        },
+        {
+          "studentId": 19,
+          "present": false
+        },
+        {
+          "studentId": 20,
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "groupId": 3,
+      "date": "2026-10-16",
+      "records": [
+        {
+          "studentId": 16,
+          "present": true
+        },
+        {
+          "studentId": 17,
+          "present": false
+        },
+        {
+          "studentId": 18,
+          "present": true
+        },
+        {
+          "studentId": 19,
+          "present": false
+        },
+        {
+          "studentId": 20,
+          "present": true
+        }
+      ]
+    }
+  ]
+}
