@@ -1,12 +1,12 @@
 import PropTypes from "prop-types"
 import { useNavigate } from "react-router-dom"
 import { Pencil, Trash2 } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import StatusBadge from "./StatusBadge"
+import DebtBadge from "./DebtBadge"
 import { calcDebt } from "@/utils/debt"
-import { formatMoney, formatPhone } from "@/utils/format"
+import { formatPhone } from "@/utils/format"
 
 function StudentsTable({ students, groups, payments, onEdit, onDelete }) {
   const navigate = useNavigate()
@@ -44,13 +44,7 @@ function StudentsTable({ students, groups, payments, onEdit, onDelete }) {
                   <StatusBadge status={student.status} />
                 </TableCell>
                 <TableCell>
-                  {student.status !== "active" ? (
-                    <span className="text-muted-foreground">—</span>
-                  ) : debt > 0 ? (
-                    <Badge variant="destructive">Qarz: {formatMoney(debt)}</Badge>
-                  ) : (
-                    <Badge className="bg-green-600 text-white">To'langan</Badge>
-                  )}
+                  <DebtBadge status={student.status} debt={debt} />
                 </TableCell>
                 {/* stopPropagation — tugma bosilganda qatorning onClick'i (profilga o'tish) ishlamasin */}
                 <TableCell className="text-right" onClick={(e) => e.stopPropagation()}>
