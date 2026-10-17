@@ -3,6 +3,11 @@ export function formatMoney(amount) {
   return Number(amount).toLocaleString("ru-RU") + " so'm"
 }
 
+// 4500000 -> "4,5 mln" (grafik o'qi uchun)
+export function formatMillions(amount) {
+  return (amount / 1000000).toLocaleString("ru-RU") + " mln"
+}
+
 // "2026-10-16" -> "16.10.2026"
 export function formatDate(date) {
   if (!date) return "—"

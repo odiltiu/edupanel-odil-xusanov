@@ -86,7 +86,7 @@ function GroupDetail() {
         <span>Boshlangan: {formatDate(group.startDate)}</span>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 lg:grid-cols-3">
         <StatCard title="Faol talabalar" value={activeStudents.length} hint={`Jami: ${students.length} ta`} icon={Users} />
         <StatCard title="Kutilayotgan oylik tushum" value={formatMoney(expectedIncome)} icon={Wallet} variant="success" />
         <StatCard

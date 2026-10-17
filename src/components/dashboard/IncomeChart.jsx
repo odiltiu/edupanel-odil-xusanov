@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getLastMonths } from "@/utils/date"
-import { formatMoney } from "@/utils/format"
+import { formatMillions, formatMoney } from "@/utils/format"
 
 // BONUS: oxirgi 6 oy tushumi (to'lov sanasi — paidAt bo'yicha)
 function IncomeChart({ payments }) {
@@ -21,12 +21,12 @@ function IncomeChart({ payments }) {
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border)" />
             <XAxis dataKey="label" tickLine={false} axisLine={false} stroke="var(--muted-foreground)" />
-            {/* Y o'qida mln ko'rinishida: 8 050 000 → "8 mln" */}
             <YAxis
+              width={72}
               tickLine={false}
               axisLine={false}
               stroke="var(--muted-foreground)"
-              tickFormatter={(value) => `${Math.round(value / 1000000)} mln`}
+              tickFormatter={formatMillions}
             />
             <Tooltip
               formatter={(value) => [formatMoney(value), "Tushum"]}

@@ -11,14 +11,14 @@ const variantClasses = {
 
 function StatCard({ title, value, icon: Icon, variant = "default", hint }) {
   return (
-    <Card>
+    <Card className="min-w-0">
       <CardContent className="flex items-center gap-4">
         <div className={`flex size-12 shrink-0 items-center justify-center rounded-lg ${variantClasses[variant]}`}>
           <Icon className="size-6" />
         </div>
         <div className="min-w-0">
           <p className="text-sm text-muted-foreground">{title}</p>
-          <p className="truncate text-2xl font-bold">{value}</p>
+          <p className="text-xl leading-tight font-bold">{value}</p>
           {hint && <p className="text-xs text-muted-foreground">{hint}</p>}
         </div>
       </CardContent>
