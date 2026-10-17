@@ -85,11 +85,6 @@ function Students() {
     loadStudents() // ro'yxatni serverdan qayta olamiz
   }
 
-  function handleDeleted() {
-    setDeleting(null)
-    loadStudents()
-  }
-
   return (
     <div>
       <PageHeader title="Talabalar" description={`Jami: ${total} ta`}>
@@ -127,6 +122,7 @@ function Students() {
             students={students}
             groups={groups}
             payments={payments}
+            startIndex={(page - 1) * LIMIT + 1}
             onEdit={openForm}
             onDelete={setDeleting}
           />
@@ -142,7 +138,7 @@ function Students() {
         onSaved={handleSaved}
       />
 
-      <DeleteStudentDialog student={deleting} onClose={() => setDeleting(null)} onDeleted={handleDeleted} />
+      <DeleteStudentDialog student={deleting} onClose={() => setDeleting(null)} onDeleted={loadStudents} />
     </div>
   )
 }

@@ -8,7 +8,8 @@ import DebtBadge from "./DebtBadge"
 import { calcDebt } from "@/utils/debt"
 import { formatPhone } from "@/utils/format"
 
-function StudentsTable({ students, groups, payments, onEdit, onDelete }) {
+// startIndex — sahifadagi birinchi qatorning raqami (2-sahifada 11)
+function StudentsTable({ students, groups, payments, startIndex, onEdit, onDelete }) {
   const navigate = useNavigate()
 
   return (
@@ -16,6 +17,7 @@ function StudentsTable({ students, groups, payments, onEdit, onDelete }) {
       <Table>
         <TableHeader>
           <TableRow>
+            <TableHead className="w-12">№</TableHead>
             <TableHead>F.I.Sh</TableHead>
             <TableHead>Telefon</TableHead>
             <TableHead>Guruh</TableHead>
@@ -25,7 +27,7 @@ function StudentsTable({ students, groups, payments, onEdit, onDelete }) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {students.map((student) => {
+          {students.map((student, index) => {
             const group = groups.find((g) => g.id === student.groupId)
             const debt = calcDebt(student, group, payments)
 
@@ -35,6 +37,7 @@ function StudentsTable({ students, groups, payments, onEdit, onDelete }) {
                 className="cursor-pointer"
                 onClick={() => navigate(`/dashboard/students/${student.id}`)}
               >
+                <TableCell className="text-muted-foreground">{startIndex + index}</TableCell>
                 <TableCell className="font-medium">
                   {student.firstName} {student.lastName}
                 </TableCell>
@@ -68,6 +71,7 @@ StudentsTable.propTypes = {
   students: PropTypes.array.isRequired,
   groups: PropTypes.array.isRequired,
   payments: PropTypes.array.isRequired,
+  startIndex: PropTypes.number.isRequired,
   onEdit: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
 }

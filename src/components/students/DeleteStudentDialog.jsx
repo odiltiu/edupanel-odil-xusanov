@@ -13,7 +13,8 @@ function DeleteStudentDialog({ student, onClose, onDeleted }) {
     try {
       await deleteStudent(student.id)
       toast.success("Talaba o'chirildi")
-      onDeleted()
+      onClose() // oynani yopamiz
+      onDeleted() // sahifa ro'yxatni qayta yuklaydi
     } catch {
       toast.error("O'chirishda xatolik yuz berdi")
     } finally {
