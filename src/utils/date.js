@@ -26,3 +26,20 @@ export function getAge(birthDate) {
   if (!hadBirthday) age = age - 1
   return age
 }
+
+const MONTH_NAMES = ["Yan", "Fev", "Mar", "Apr", "May", "Iyun", "Iyul", "Avg", "Sen", "Okt", "Noy", "Dek"]
+
+// Oxirgi n oy (eskisidan yangisiga): [{ key: "2026-05", label: "May" }, ...]
+export function getLastMonths(n) {
+  const result = []
+  const today = new Date()
+  for (let i = n - 1; i >= 0; i--) {
+    // new Date(yil, oy - i, 1) — i oy oldingi oyning 1-kuni (yil o'zi to'g'rilanadi)
+    const d = new Date(today.getFullYear(), today.getMonth() - i, 1)
+    result.push({
+      key: `${d.getFullYear()}-${twoDigits(d.getMonth() + 1)}`,
+      label: MONTH_NAMES[d.getMonth()],
+    })
+  }
+  return result
+}

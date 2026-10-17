@@ -5,6 +5,7 @@ import LoadingState from "@/components/common/LoadingState"
 import ErrorState from "@/components/common/ErrorState"
 import RecentPayments from "@/components/dashboard/RecentPayments"
 import TopDebtors from "@/components/dashboard/TopDebtors"
+import IncomeChart from "@/components/dashboard/IncomeChart"
 import { getStudents } from "@/api/students"
 import { getGroups } from "@/api/groups"
 import { getPayments } from "@/api/payments"
@@ -85,6 +86,8 @@ function Dashboard() {
           variant="danger"
         />
       </div>
+
+      <IncomeChart payments={payments} />
 
       <div className="grid gap-6 lg:grid-cols-2">
         <RecentPayments payments={recent} />
