@@ -1,14 +1,59 @@
-import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
+import { Navigate, Route, Routes } from "react-router-dom"
 import { Toaster } from "@/components/ui/sonner"
+import ProtectedRoute from "@/routes/ProtectedRoute"
+import PublicRoute from "@/routes/PublicRoute"
+import DashboardLayout from "@/layouts/DashboardLayout"
+import Login from "@/pages/Login"
+import Dashboard from "@/pages/Dashboard"
+import Students from "@/pages/Students"
+import StudentDetail from "@/pages/StudentDetail"
+import Groups from "@/pages/Groups"
+import GroupDetail from "@/pages/GroupDetail"
+import Payments from "@/pages/Payments"
+import Attendance from "@/pages/Attendance"
+import Settings from "@/pages/Settings"
+import NotFound from "@/pages/NotFound"
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-4">
-      <h1 className="text-3xl font-bold">EduPanel</h1>
-      <Button onClick={() => toast.success("Hammasi ishlayapti!")}>Tekshirish</Button>
-      <Toaster />
-    </div>
+    <>
+      <Routes>
+        {/* Ochiq sahifa: kirgan admin bu yerga kirsa /dashboard ga qaytariladi */}
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
+
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
+        {/* Himoyalangan sahifalar: hammasi DashboardLayout ichida (<Outlet />) ochiladi */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Dashboard />} />
+          <Route path="students" element={<Students />} />
+          <Route path="students/:id" element={<StudentDetail />} />
+          <Route path="groups" element={<Groups />} />
+          <Route path="groups/:id" element={<GroupDetail />} />
+          <Route path="payments" element={<Payments />} />
+          <Route path="attendance" element={<Attendance />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      <Toaster richColors position="top-right" />
+    </>
   )
 }
 
