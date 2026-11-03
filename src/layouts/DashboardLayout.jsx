@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { Suspense, useState } from "react"
 import PropTypes from "prop-types"
 import { Outlet, useLocation } from "react-router-dom"
 import Sidebar from "@/components/layout/Sidebar"
 import Topbar from "@/components/layout/Topbar"
 import { getPageTitle } from "@/components/layout/navLinks"
+import LoadingState from "@/components/common/LoadingState"
 
 function DashboardLayout({ theme, onToggleTheme }) {
   // Mobil sidebar ochiq yoki yopiq
@@ -24,7 +25,10 @@ function DashboardLayout({ theme, onToggleTheme }) {
         />
         <main className="flex-1 p-4 md:p-6">
           {/* Shu yerga ichki sahifalar qo'yiladi; context — ularga (Settings) theme berish uchun */}
-          <Outlet context={{ theme, onToggleTheme }} />
+          {/* Sahifa fayli yuklanayotganda yon panel joyida qoladi */}
+          <Suspense fallback={<LoadingState />}>
+            <Outlet context={{ theme, onToggleTheme }} />
+          </Suspense>
         </main>
       </div>
     </div>

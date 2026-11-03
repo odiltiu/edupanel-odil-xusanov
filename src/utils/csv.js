@@ -1,17 +1,21 @@
 // rows — massivlar massivi: [["Talaba", "Summa"], ["Ali Karimov", 800000], ...]
 export function downloadCsv(filename, rows) {
-  // Har katakni qo'shtirnoqqa olamiz (ichida vergul bo'lsa ham buzilmasin)
-  const lines = rows.map((row) => row.map((cell) => `"${String(cell).replaceAll('"', '""')}"`).join(","))
-  const text = lines.join("\n")
+  // Ajratgich ";" — o'zbek va rus sozlamali Excel ustunlarni shu belgi bo'yicha ajratadi
+  // (vergul bilan hamma ma'lumot bitta ustunga tushib qolardi)
+  const lines = rows.map((row) => row.map((cell) => `"${String(cell ?? "").replaceAll('"', '""')}"`).join(";"))
+  const text = lines.join("\r\n")
 
   // "\uFEFF" — Excel o'zbekcha harflarni (o', g') to'g'ri ochishi uchun belgi
   const blob = new Blob(["\uFEFF" + text], { type: "text/csv;charset=utf-8" })
   const url = URL.createObjectURL(blob)
 
-  // Ko'rinmas <a> havola yasab, uni bosamiz — brauzer faylni yuklab oladi
+  // Ko'rinmas <a> havola: Firefox uchun sahifaga qo'shilgan bo'lishi kerak
   const link = document.createElement("a")
   link.href = url
   link.download = filename
+  document.body.appendChild(link)
   link.click()
-  URL.revokeObjectURL(url)
+  link.remove()
+  // Darhol o'chirsak, ba'zi brauzerlar yuklashni bekor qiladi
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
 }

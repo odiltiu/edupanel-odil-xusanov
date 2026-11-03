@@ -1,19 +1,23 @@
-import { useEffect, useState } from "react"
+import { lazy, Suspense, useEffect, useState } from "react"
 import { Navigate, Route, Routes } from "react-router-dom"
 import { Toaster } from "@/components/ui/sonner"
 import ProtectedRoute from "@/routes/ProtectedRoute"
 import PublicRoute from "@/routes/PublicRoute"
 import DashboardLayout from "@/layouts/DashboardLayout"
-import Login from "@/pages/Login"
-import Dashboard from "@/pages/Dashboard"
-import Students from "@/pages/Students"
-import StudentDetail from "@/pages/StudentDetail"
-import Groups from "@/pages/Groups"
-import GroupDetail from "@/pages/GroupDetail"
-import Payments from "@/pages/Payments"
-import Attendance from "@/pages/Attendance"
-import Settings from "@/pages/Settings"
-import NotFound from "@/pages/NotFound"
+import LoadingState from "@/components/common/LoadingState"
+
+// Sahifalar alohida fayllarga bo'linadi va faqat ochilganda yuklanadi.
+// Masalan, grafik kutubxonasi (recharts) faqat bosh panelga kirganda yuklanadi.
+const Login = lazy(() => import("@/pages/Login"))
+const Dashboard = lazy(() => import("@/pages/Dashboard"))
+const Students = lazy(() => import("@/pages/Students"))
+const StudentDetail = lazy(() => import("@/pages/StudentDetail"))
+const Groups = lazy(() => import("@/pages/Groups"))
+const GroupDetail = lazy(() => import("@/pages/GroupDetail"))
+const Payments = lazy(() => import("@/pages/Payments"))
+const Attendance = lazy(() => import("@/pages/Attendance"))
+const Settings = lazy(() => import("@/pages/Settings"))
+const NotFound = lazy(() => import("@/pages/NotFound"))
 import { applyTheme, getSavedTheme } from "@/utils/theme"
 
 function App() {
@@ -31,6 +35,7 @@ function App() {
 
   return (
     <>
+      <Suspense fallback={<div className="p-6"><LoadingState /></div>}>
       <Routes>
         {/* Ochiq sahifa: kirgan admin bu yerga kirsa /dashboard ga qaytariladi */}
         <Route
@@ -65,6 +70,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </Suspense>
 
       <Toaster theme={theme} richColors position="top-right" />
     </>

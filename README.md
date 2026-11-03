@@ -48,6 +48,8 @@ npm run server   # json-server — http://localhost:3001
 npm run dev      # ilova — http://localhost:5173
 ```
 
+Backend boshqa manzilda bo'lsa (masalan, internetga chiqarilganda), `.env.example` dan nusxa olib `.env` yarating va `VITE_API_URL` ni o'zgartiring.
+
 ## Kirish ma'lumotlari
 
 | Login | Parol |
